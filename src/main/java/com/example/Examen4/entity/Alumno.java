@@ -16,7 +16,7 @@ public class Alumno {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String name;
+    private String nombre;
     private String apellido;
     private String direccion;
     private String mail;
@@ -25,9 +25,9 @@ public Alumno(){
 
 }
 
-    public Alumno(Integer id, String name, String apellido, String mail) {
+    public Alumno(Integer id, String nombre, String apellido, String mail) {
         id = id;
-        this.name = name;
+        this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
     }

@@ -10,6 +10,8 @@ import java.util.List;
 
 @Transactional
 public interface AlumnoRepositoryDao extends CrudRepository<Alumno,Integer> {
+    @Query(value = "Select nombre from Alumno t where t.id=:id")
+    public List<String> findAlumno(Integer id);
 
 //@Query(value = "Select nombre from Alumnos t where t.id=:id")
    // public List<String> findAlumno(Integer id);

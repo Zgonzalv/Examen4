@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class AlumnoController {
 
@@ -19,9 +21,18 @@ public class AlumnoController {
             service.AddAlumno(alumno);
             return ResponseEntity.ok(alumno);
         }
-    @GetMapping("/{pornombre}/{nombrevariable}")
+   /* @GetMapping("/{pornombre}/{nombrevariable}")
     public Alumno getAlumnoByName(@PathVariable("nombrevariable") String name) {
             return service.getAlumno(name);
     }
 
+    @GetMapping("/porid/{id}")
+    public List<String> getAlumnoPorNombre(@PathVariable("id") Integer id){
+        return service.getAlumno(id);
+    }
+    */
+@GetMapping("/porid/{id}")
+    public List<String>getAlumnoporNombres(@PathVariable("id")Integer id){
+    return service.getAlumno(id);
+}
 }
